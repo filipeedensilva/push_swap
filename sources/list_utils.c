@@ -1,0 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/10 16:51:35 by feden-pe          #+#    #+#             */
+/*   Updated: 2023/10/13 17:53:22 by feden-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+t_node	*add_node(long value)
+{
+	t_node	*new;
+
+	new = malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->next = NULL;
+	return (new);
+}
+
+t_node	*find_tail(t_node *head)
+{
+	if (!head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
+
+void	add_tail(t_node **head, t_node *node)
+{
+	t_node	*tmp;
+
+	if (!node)
+		return ;
+	if (!*head)
+	{
+		*head = node;
+		return ;
+	}
+	tmp = *head;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = node;
+}
+
+void	print_list(t_node *head)
+{
+	t_node	*current;
+	int	i;
+
+	i = 0;
+	current = head;
+	while (current)
+	{
+		ft_printf("%d: %d\n", i, current->value);
+		i++;
+		current = current->next;
+	}
+}
+
