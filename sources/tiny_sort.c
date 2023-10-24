@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 13:57:39 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/22 19:56:25 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:14:35 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_node	*find_min_value(t_node *stack)
 	return (small);
 }
 
-void	tiny_sort(t_node **a)
+void	sort_3(t_node **a)
 {
 	t_node	*max;
 
@@ -74,9 +74,42 @@ void	sort_5(t_node **a, t_node **b)
 		else
 			ra(a);
 	}
-	tiny_sort(a);
+	sort_3(a);
 	pa(a, b);
 	pa(a, b);
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
+}
+
+void	sort_all(t_node **a, t_node **b)
+{
+	int	average;
+	int	bf;
+	int	num;
+
+	while (list_len(a) > 5)
+	{
+		average = get_average(a);
+		if ((*a)->value < average)
+			pb(a, b);
+		else
+		 	ra(a);
+	}
+	sort_5(a, b);
+	while (*b)
+	{
+		bf = get_bf(a, (*b)->value);
+		num = get_cheapest(*a, *b);
+		climb_stack_a(a, num);
+		climb_stack_b(b, bf);
+		pa(a, b);
+	}
+	if (get_min_pos(a) > (list_len(a) / 2))
+	{
+		while ((*a)->value != find_min_value(*a)->value)
+			rra(a);
+	}
+	else
+		while ((*a)->value != find_min_value(*a)->value)
+			ra(a);
 }

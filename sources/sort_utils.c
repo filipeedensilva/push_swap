@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:17:48 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/22 18:32:06 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:25:42 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	get_average(t_node **stack)
 	int		count;
 	t_node	*tmp;
 
+	tmp = NULL;
 	sum = 0;
 	count = list_len(stack);
 	tmp = (*stack);
@@ -35,4 +36,37 @@ int	get_average(t_node **stack)
 		tmp = tmp->next;
 	}
 	return (sum / count);
+}
+
+int	get_bf(t_node **stack, int num)
+{
+	t_node	*tmp;
+	int	bf;
+
+	tmp = *stack;
+	bf = tmp->value;
+	while (tmp)
+	{
+		if (bf > tmp->value && tmp->value > num)
+			bf = tmp->value;
+		tmp = tmp->next;
+	}
+	return (bf);
+}
+
+int	get_min_pos(t_node **stack)
+{
+	t_node	*tmp;
+	int		min;
+	int		i;
+
+	tmp = NULL;
+	i = 0;
+	min = find_min_value(*stack)->value;
+	while (tmp && tmp->value != min)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }

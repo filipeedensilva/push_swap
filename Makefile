@@ -6,7 +6,7 @@
 #    By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 17:57:44 by feden-pe          #+#    #+#              #
-#    Updated: 2023/10/13 18:36:12 by feden-pe         ###   ########.fr        #
+#    Updated: 2023/10/24 20:37:27 by feden-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,18 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 
-SRC = push_swap.c \
+SRC = main.c \
       check.c \
-      list_utils.c \
+      climb.c \
       error.c \
       commands.c \
       instructions.c \
-      instructions2.c
+      instructions2.c \
+      list_help.c \
+      sort.c \
+      sort_utils.c \
+      cost.c \
+      tiny_sort.c
 
 
 NAME = push_swap

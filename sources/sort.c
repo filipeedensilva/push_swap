@@ -1,50 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 17:24:15 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/24 20:22:46 by feden-pe         ###   ########.fr       */
+/*   Created: 2023/10/24 16:55:29 by feden-pe          #+#    #+#             */
+/*   Updated: 2023/10/24 20:22:50 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_values(char **args)
+void	sort(t_node **a, t_node **b)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (args)
-	{
-		while (args[i])
-			free(args[i++]);
-		free(args);
-	}
-
-}
-
-void	free_stack(t_node **stack)
-{
-	t_node	*tmp;
-
-	if (!stack)
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		(*stack)->value = 0;
-		free(*stack);
-		(*stack) = tmp;
-	}
-}
-
-void	error_msg(char *str, t_node **stack)
-{
-	if (str)
-		ft_printf("Error: %s\n", str);
-	free_stack(stack);
-	exit(0 );
+	len = list_len(a);
+	if (len <= 3)
+		sort_3(a);
+	else if (len <= 5)
+		sort_5(a, b);
+	else
+		sort_all(a, b);
 }
