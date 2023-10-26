@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:01:59 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/24 19:18:57 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:20:49 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,25 @@
 int	get_moves(t_node *stack, int num, int len)
 {
 	int	moves;
-	int	middle;
 
 	moves = 0;
-	middle = len / 2;
 	while (stack->value != num)
 	{
 		moves++;
 		stack = stack->next;
 	}
-	if (moves > middle)
+	if (moves > (len / 2))
 		return (len - moves);
 	return (moves);
 }
 
 int	get_cost(t_node *a, t_node *b, int num, int bf)
 {
-	int	cost_a;
-	int	cost_b;
+	static int	cost;
 
-	cost_a = get_moves(a, bf, list_len(&a));
-	cost_b = get_moves(b, num, list_len(&b));
-	return (cost_a + cost_b);
+	cost = get_moves(a, bf, list_len(&a));
+	cost += get_moves(b, num, list_len(&b));
+	return (cost);
 }
 
 int	get_cheapest(t_node *a, t_node *b)

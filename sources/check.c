@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:41:16 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/24 17:23:54 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:23:24 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ long	ft_atol(const char *str)
 			sign = -1;
 		str++;
 	}
+	while (*str && *str == '0')
+		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		res = res * 10 + (*str - '0');
@@ -66,7 +68,7 @@ void	check_num(char **values, t_node **a, long res, int j)
 		error_msg("arg is not a number!", a);
 	if (!is_repeated(*a, res))
 		error_msg("number is repeated!", a);
-	if (res < INT_MIN || res > INT_MAX)
+	if (res < INT_MIN || res > INT_MAX || (ft_strlen(values[j]) > 11))
 		error_msg("number is not in the interger scope!", a);
 	add_tail(a, add_node(res));
 }

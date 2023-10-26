@@ -6,7 +6,7 @@
 #    By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 17:57:44 by feden-pe          #+#    #+#              #
-#    Updated: 2023/10/24 20:37:27 by feden-pe         ###   ########.fr        #
+#    Updated: 2023/10/25 16:24:15 by feden-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = main.c \
       commands.c \
       instructions.c \
       instructions2.c \
-      list_help.c \
+      list_utils.c \
       sort.c \
       sort_utils.c \
       cost.c \

@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:04:02 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/24 20:33:41 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:13:20 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	sort(t_node **a, t_node **b);
 void	add_tail(t_node **head, t_node *node);
 t_node	*add_node(long value);
 t_node	*find_tail(t_node *head);
+void	print_list(t_node *head);
 
 // sort util
 int	get_average(t_node **stack);
