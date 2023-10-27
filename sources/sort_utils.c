@@ -6,17 +6,16 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:17:48 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 15:10:26 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:43:57 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-
 int	get_average(t_node **stack)
 {
-	long		sum;
 	int		count;
+	long	sum;
 	t_node	*tmp;
 
 	tmp = NULL;
@@ -63,4 +62,18 @@ int	get_min_pos(t_node **stack)
 		tmp = tmp->next;
 	}
 	return (i);
+}
+
+int	is_sorted(t_node *stack)
+{
+	t_node	*tmp;
+
+	tmp = stack;
+	while (tmp && tmp->next)
+	{
+		if (tmp->value > tmp->next->value)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

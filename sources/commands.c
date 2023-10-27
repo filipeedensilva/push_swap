@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:03:24 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/13 18:46:05 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:44:43 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	swap(t_node **stack)
 	t_node	*first;
 	t_node	*second;
 	t_node	*third;
-	
+
 	if (!(*stack) || !(*stack)->next)
 		return (0);
 	first = *stack;
@@ -46,7 +46,7 @@ int	rotate(t_node **stack)
 {
 	t_node	*tmp;
 	t_node	*last;
-	
+
 	if (!*stack || !(*stack)->next)
 		return (0);
 	tmp = (*stack)->next;

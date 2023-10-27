@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:55:29 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 14:30:35 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:35:24 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ void	sort_5(t_node **a, t_node **b)
 void	sort_all(t_node **a, t_node **b)
 {
 	int	average;
-	int	bf;
-	int	num;
 
 	while (list_len(a) > 5)
 	{
@@ -66,9 +64,17 @@ void	sort_all(t_node **a, t_node **b)
 		if ((*a)->value < average)
 			pb(b, a);
 		else
-		 	ra(a);
+			ra(a);
 	}
 	sort_5(a, b);
+	push_swap(a, b);
+}
+
+void	push_swap(t_node **a, t_node **b)
+{
+	int	bf;
+	int	num;
+
 	while (*b)
 	{
 		num = get_cheapest(*a, *b);

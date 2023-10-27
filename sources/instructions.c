@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:34:19 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/13 17:47:55 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:47:45 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	pb(t_node **b, t_node **a)
 	if (push(b, a) == 0)
 		return (0);
 	else
-	 	ft_printf("pb\n");
+		ft_printf("pb\n");
 	return (1);
 }

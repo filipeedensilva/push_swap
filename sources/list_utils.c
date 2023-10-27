@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:51:35 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 15:08:09 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:40:47 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ int	list_len(t_node **stack)
 	if (!*stack)
 		return (0);
 	else
-	 	return (1 + list_len(&(*stack)->next));
+		return (1 + list_len(&(*stack)->next));
 }
 
 void	print_list(t_node *head)
 {
+	int		i;
 	t_node	*current;
-	int	i;
 
 	i = 0;
 	current = head;
@@ -72,4 +72,3 @@ void	print_list(t_node *head)
 		current = current->next;
 	}
 }
-

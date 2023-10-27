@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:41:16 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/26 20:01:14 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:44:07 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	is_repeated(t_node *head, int num)
 
 long	ft_atol(const char *str)
 {
+	int		sign;
 	long	res;
-	int	sign;
 
 	res = 0;
 	sign = 1;
@@ -100,19 +100,4 @@ void	arg_check(int ac, char **av, t_node **a)
 		ft_printf("Error\n");
 		exit(0);
 	}
-}
-
-
-int	is_sorted(t_node *stack)
-{
-	t_node	*tmp;
-
-	tmp = stack;
-	while (tmp && tmp->next)
-	{
-		if (tmp->value > tmp->next->value)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
 }

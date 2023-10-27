@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:01:59 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 15:09:11 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:40:06 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	get_cheapest(t_node *a, t_node *b)
 	while (tmp)
 	{
 		bf = get_bf(&a, tmp->value);
-		cost = 	get_cost(a, b, tmp->value, bf);
+		cost = get_cost(a, b, tmp->value, bf);
 		if (cost < cheapest)
 		{
 			num = tmp->value;
@@ -63,8 +63,8 @@ int	get_cheapest(t_node *a, t_node *b)
 
 t_node	*find_max_value(t_node *stack)
 {
-	int	max;
-	t_node		*tmp;
+	int		max;
+	t_node	*tmp;
 
 	if (!stack)
 		return (NULL);
@@ -84,7 +84,7 @@ t_node	*find_max_value(t_node *stack)
 int	find_min_value(t_node *stack)
 {
 	int		min;
-	t_node		*tmp;
+	t_node	*tmp;
 
 	tmp = stack;
 	min = tmp->value;
