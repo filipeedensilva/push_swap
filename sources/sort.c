@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:55:29 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 16:35:24 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:06:38 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sort_3(t_node **a)
 {
 	t_node	*max;
 
-	max = find_max_value(*a);
+	max = find_max_node(*a);
 	if (*a == max)
 		ra(a);
 	else if ((*a)->next == max)

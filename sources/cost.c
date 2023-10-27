@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:01:59 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 16:40:06 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:06:13 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	get_cheapest(t_node *a, t_node *b)
 	return (num);
 }
 
-t_node	*find_max_value(t_node *stack)
+t_node	*find_max_node(t_node *stack)
 {
 	int		max;
 	t_node	*tmp;

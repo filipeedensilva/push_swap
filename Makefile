@@ -6,13 +6,13 @@
 #    By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 17:57:44 by feden-pe          #+#    #+#              #
-#    Updated: 2023/10/27 16:52:18 by feden-pe         ###   ########.fr        #
+#    Updated: 2023/10/27 18:12:54 by feden-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
@@ -55,8 +55,6 @@ clean:
 
 fclean: clean
 	make fclean -C ./libft
-	$(RM) $(BONUS)
-	$(RM) $(GNL_OBJ)
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
