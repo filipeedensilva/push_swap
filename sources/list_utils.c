@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:51:35 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/13 17:53:22 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:08:09 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,14 @@ void	add_tail(t_node **head, t_node *node)
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	tmp->next = node;
+}
+
+int	list_len(t_node **stack)
+{
+	if (!*stack)
+		return (0);
+	else
+	 	return (1 + list_len(&(*stack)->next));
 }
 
 void	print_list(t_node *head)

@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:02:22 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/25 17:13:39 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:17:57 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	arg_check(ac, av, &a);
-	// if (is_sorted(a))
-	// {
-	// 	free_stack(&a);
-	// 	return (0);
-	// }
+	if (is_sorted(a))
+	{
+		free_stack(&a);
+		return (0);
+	}
 	sort(&a, &b);
-	print_list(a);
 	free_stack(&a);
 }

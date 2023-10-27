@@ -6,33 +6,27 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:17:48 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/26 13:10:43 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:10:26 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	list_len(t_node **stack)
-{
-	if (!*stack)
-		return (0);
-	else
-	 	return (1 + list_len(&(*stack)->next));
-}
 
 int	get_average(t_node **stack)
 {
-	int		sum;
+	long		sum;
 	int		count;
 	t_node	*tmp;
 
 	tmp = NULL;
 	sum = 0;
-	count = list_len(stack);
+	count = 0;
 	tmp = (*stack);
 	while (tmp)
 	{
 		sum += tmp->value;
+		count++;
 		tmp = tmp->next;
 	}
 	return (sum / count);
@@ -62,7 +56,7 @@ int	get_min_pos(t_node **stack)
 
 	tmp = *stack;
 	i = 0;
-	min = find_min_value(*stack)->value;
+	min = find_min_value(*stack);
 	while (tmp->value != min)
 	{
 		i++;

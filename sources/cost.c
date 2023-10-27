@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:01:59 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/26 13:20:49 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:09:11 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,42 @@ int	get_cheapest(t_node *a, t_node *b)
 		tmp = tmp->next;
 	}
 	return (num);
+}
+
+t_node	*find_max_value(t_node *stack)
+{
+	int	max;
+	t_node		*tmp;
+
+	if (!stack)
+		return (NULL);
+	max = INT_MIN;
+	while (stack)
+	{
+		if (stack->value > max)
+		{
+			max = stack->value;
+			tmp = stack;
+		}
+		stack = stack->next;
+	}
+	return (tmp);
+}
+
+int	find_min_value(t_node *stack)
+{
+	int		min;
+	t_node		*tmp;
+
+	tmp = stack;
+	min = tmp->value;
+	while (tmp)
+	{
+		if (tmp->value < min)
+		{
+			min = tmp->value;
+		}
+		tmp = tmp->next;
+	}
+	return (min);
 }

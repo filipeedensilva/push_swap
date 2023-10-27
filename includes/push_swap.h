@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:04:02 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/25 17:13:20 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 14:24:55 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_node
 	struct s_node	*next;
 }		t_node;
 
-void	error_msg(char *str, t_node **stack);
+void	error_msg(char *str, t_node **stack, char **args);
 void	free_values(char **values);
 int	swap(t_node **stack);
 int	push(t_node **stack, t_node **stack2);
@@ -62,7 +62,8 @@ void	print_list(t_node *head);
 int	get_average(t_node **stack);
 int	list_len(t_node **stack);
 int	get_bf(t_node **stack, int num);
-t_node	*find_min_value(t_node *stack);
+int	find_min_value(t_node *stack);
+t_node	*find_max_value(t_node *stack);
 int	get_min_pos(t_node **stack);
 
 int	get_cheapest(t_node *a, t_node *b);
