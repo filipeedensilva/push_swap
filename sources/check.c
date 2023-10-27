@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:41:16 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 16:44:07 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:22:50 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,18 @@ long	ft_atol(const char *str)
 
 void	check_num(char **values, t_node **a, long res, int j)
 {
+	char	*check;
+
 	res = ft_atol(values[j]);
+	check = ft_itoa(res);
 	if (!is_num(values[j]))
 		error_msg("arg is not a number!", a, values);
 	if (!is_repeated(*a, res))
 		error_msg("number is repeated!", a, values);
-	if (res < INT_MIN || res > INT_MAX || (ft_strlen(ft_itoa(res)) > 11))
+	if (res < INT_MIN || res > INT_MAX || (ft_strlen(check) > 11))
 		error_msg("number is not in the interger scope!", a, values);
 	add_tail(a, add_node(res));
+	free(check);
 }
 
 void	arg_check(int ac, char **av, t_node **a)
