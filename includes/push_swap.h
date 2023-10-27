@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:04:02 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 18:05:41 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:48:30 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_node
 	struct s_node	*next;
 }		t_node;
 
-void	error_msg(char *str, t_node **stack, char **args);
+void	error_msg(t_node **stack, char **args);
 void	free_values(char **values);
 int		swap(t_node **stack);
 int		push(t_node **stack, t_node **stack2);

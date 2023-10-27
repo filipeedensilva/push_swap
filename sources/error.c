@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:24:15 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 16:41:17 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:47:10 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void	free_stack(t_node **stack)
 	}
 }
 
-void	error_msg(char *str, t_node **stack, char **args)
+void	error_msg(t_node **stack, char **args)
 {
-	if (str)
-		ft_printf("Error: %s\n", str);
+	ft_printf("Error\n");
 	free_stack(stack);
 	if (args)
 		free_values(args);
