@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:41:16 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 18:50:45 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/28 21:32:57 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ int	is_num(char *str)
 		str++;
 	}
 	return (1);
+}
+
+char	*skip_z(char *str)
+{
+	while (*str && *str == '0')
+	{
+		*str = 0;
+		str++;
+	}
+	return (str);
 }
 
 int	is_repeated(t_node *head, int num)
@@ -51,8 +61,6 @@ long	ft_atol(const char *str)
 			sign = -1;
 		str++;
 	}
-	while (*str && *str == '0')
-		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		res = res * 10 + (*str - '0');
@@ -63,21 +71,11 @@ long	ft_atol(const char *str)
 
 void	check_num(char **values, t_node **a, long res, int j)
 {
-	char	*check;
-
+	values[j] = skip_z(values[j]);
 	res = ft_atol(values[j]);
-	check = ft_itoa(res);
-	if (!is_num(values[j]))
+	if (!is_num(values[j]) || !is_repeated(*a, res) || res < INT_MIN || res > INT_MAX || ft_strlen(values[j]) > 11)
 		error_msg(a, values);
-	if (!is_repeated(*a, res))
-		error_msg(a, values);
-	if (res < INT_MIN || res > INT_MAX || (ft_strlen(check) > 11))
-	{
-		free(check);
-		error_msg(a, values);
-	}
 	add_tail(a, add_node(res));
-	free(check);
 }
 
 void	arg_check(int ac, char **av, t_node **a)

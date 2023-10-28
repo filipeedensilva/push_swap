@@ -6,13 +6,13 @@
 #    By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 17:57:44 by feden-pe          #+#    #+#              #
-#    Updated: 2023/10/27 18:12:54 by feden-pe         ###   ########.fr        #
+#    Updated: 2023/10/28 21:26:32 by feden-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror -g
 
 RM = rm -f
 
