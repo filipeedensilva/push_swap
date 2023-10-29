@@ -6,34 +6,11 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:41:16 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/28 21:32:57 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:35:33 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	is_num(char *str)
-{
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
-	}
-	return (1);
-}
-
-char	*skip_z(char *str)
-{
-	while (*str && *str == '0')
-	{
-		*str = 0;
-		str++;
-	}
-	return (str);
-}
 
 int	is_repeated(t_node *head, int num)
 {
@@ -61,6 +38,8 @@ long	ft_atol(const char *str)
 			sign = -1;
 		str++;
 	}
+	while (*str && *str == '0')
+		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		res = res * 10 + (*str - '0');
@@ -69,11 +48,24 @@ long	ft_atol(const char *str)
 	return (res * sign);
 }
 
+int	skip_z(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] == '0')
+		i++;
+	return (i);
+}
+
 void	check_num(char **values, t_node **a, long res, int j)
 {
-	values[j] = skip_z(values[j]);
+	int	i;
+
+	i = skip_z(values[j]);
 	res = ft_atol(values[j]);
-	if (!is_num(values[j]) || !is_repeated(*a, res) || res < INT_MIN || res > INT_MAX || ft_strlen(values[j]) > 11)
+	if (!is_num(values[j]) || !is_repeated(*a, res) || \
+	res < INT_MIN || res > INT_MAX || (ft_strlen(values[j]) - i) > 10)
 		error_msg(a, values);
 	add_tail(a, add_node(res));
 }
@@ -102,7 +94,7 @@ void	arg_check(int ac, char **av, t_node **a)
 	}
 	else
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		exit(0);
 	}
 }

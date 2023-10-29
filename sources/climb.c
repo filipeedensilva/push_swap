@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:19:05 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/10/27 16:45:16 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:35:53 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,17 @@ void	climb_stack_b(t_node **b, int num)
 		while (count-- > 0)
 			rb(b);
 	}
+}
+
+int	is_num(char *str)
+{
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }
