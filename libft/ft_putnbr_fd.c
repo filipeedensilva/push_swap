@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:07:21 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/04/19 19:17:32 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:25:47 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	ft_putnbr_fd(int n, int fd)
 		{
 			ft_putnbr_fd(n / 10, fd);
 			ft_putnbr_fd(n % 10, fd);
-		}			
+		}
 		else
 		{
 			n = n + '0';
 			ft_putchar_fd(n, fd);
-		}	
+		}
 	}
 }

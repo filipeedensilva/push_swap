@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:19:12 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/04/19 23:36:22 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:24:58 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		j = 0;
 		while (big[i + j] == little[j] && i + j < len)
-		{	
+		{
 			if (little[j + 1] == '\0')
 				return ((char *)&big[i]);
 			j++;

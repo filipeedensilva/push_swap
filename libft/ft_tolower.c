@@ -6,7 +6,7 @@
 /*   By: feden-pe <feden-pe@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:59:38 by feden-pe          #+#    #+#             */
-/*   Updated: 2023/04/12 16:01:01 by feden-pe         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:26:58 by feden-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_tolower(int c)
 	if (c >= 'A' && c <= 'Z')
 	{
 		return (c + 32);
-	}	
+	}
 	else
 		return (c);
 }
